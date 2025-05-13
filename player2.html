@@ -18,12 +18,17 @@ function getQueryParam(param) {
 }
 
 const src = getQueryParam('src');
+const title = getQueryParam('title');
 const videoElement = document.getElementById('videoPlayer');
 
 if (src) {
     videoElement.src = src;
 } else {
     document.body.innerHTML += "<p>未提供视频源。</p>";
+}
+
+if (title) {
+    document.getElementById('video-title').innerText = title;
 }
 </script>
 </body>
