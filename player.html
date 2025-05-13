@@ -5,7 +5,7 @@
 <title>播放媒体</title>
 </head>
 <body>
-<h1>播放媒体</h1>
+<h1 id="music-title">播放媒体</h1>
 <audio id="audioPlayer" controls style="width: 100%; max-width: 600px;"></audio>
 
 <script>
@@ -13,6 +13,7 @@
   // 获取URL参数
   const params = new URLSearchParams(window.location.search);
   const src = params.get('src'); // 媒体文件路径
+  const title = params.get('title');
   const player = document.getElementById('audioPlayer');
   
   if (src) {
@@ -22,6 +23,9 @@
   } else {
     document.body.innerHTML = "<p>未找到媒体资源</p>";
   }
+
+  if (title) {
+    document.getElementById('music-title').innerText = title;
 })();
 </script>
 </body>
